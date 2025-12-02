@@ -1,16 +1,23 @@
 import Link from "next/link";
+import Container from "./container";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   return (
-    <div className="bg-secondary text-secondary-foreground p-4 flex justify-between">
-      <div>
-        <h1>Sand Something</h1>
-      </div>
-      <nav className="space-x-4">
-        <Link href="/page1">Page 1</Link>
-        <Link href="/page2">Page 2</Link>
-        <Link href="/page3">Page 3</Link>
-      </nav>
+    <div className="fixed inset-x-0 bg-background/30 backdrop-blur-xs border-b text-secondary-foreground p-4 ">
+      <Container className="flex justify-between">
+        <div>
+          <Link href="/">
+            <h1>Sand Something</h1>
+          </Link>
+        </div>
+        <nav className="flex items-center space-x-4">
+          <ModeToggle />
+          <Link href="/map">Map</Link>
+          <Link href="#">About</Link>
+          <Link href="#">Help</Link>
+        </nav>
+      </Container>
     </div>
   );
 }
