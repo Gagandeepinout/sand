@@ -1,11 +1,13 @@
 import Container from "@/components/common/container";
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
-      <Container className="flex pointer-events-auto justify-center h-screen items-center p-4">
+    <div className="relative overflow-hidden">
+      <BackgroundRippleEffect />
+      <Container className="flex justify-center h-screen items-center p-4">
         <div className="flex flex-col items-center gap-6">
           <h1 className="text-6xl font-semibold tracking-tight">
             Sand Grain Size Mapping
@@ -18,6 +20,6 @@ export default function Home() {
           </Link>
         </div>
       </Container>
-    </>
+    </div>
   );
 }
